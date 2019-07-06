@@ -1,0 +1,248 @@
+body{
+    /*font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;   
+    These lines can be replaced by single line font as shown below*/
+    font:15px/1.5 Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: #f4f4f4;
+       
+}
+/*Global*/
+.container{  /* container with . represents a clas whereas with # represents id*/
+    width:80%;
+    margin:auto;
+    overflow: hidden;
+}
+/*Instead of assigning margin and padding to
+ each item we can assign all ul items with
+  0 padding and 0 margin*/
+
+  ul{
+    margin: 0;
+    padding: 0;
+}
+
+.button_1{   /*we define button_1 global as we may 
+              need to use it in more than one places*/
+    height: 38px;
+    background: #e8491d;
+    border: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    color: #ffffff;
+}
+
+.dark{
+    padding: 15px;
+    background: #35424a;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom:10px;
+}
+
+
+
+
+
+/* Header **/
+header{
+    background-color:#35424a;
+    color:#ffffff; /* Here only the list and text color are changed but not link color, which will be done later*/
+    padding-top: 30px;
+    min-height:70px;
+    border-bottom: #e8491d 3px solid; /*3px is width of header element*/
+}
+/*this is for links in header with tag 'a'*/
+header a{
+    color:#ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size:16px;
+
+
+}
+
+header ul{
+    margin: 0; /*we want to remove margin*/
+    padding: 0;/*by default unordered list has padding. so we set margin to 0*/
+}
+
+header li{
+    float: left; /*We want list items (menu items) to float left (horizontal)*/
+    display: inline; /*to display list items in line*/
+    padding: 0 20px 0 20px; /*padding applied as top right bottom left */
+}
+
+/*Now we want to shift the menu items (nav items) to the right*/
+
+header #branding{ /*branding is in form of id so # precedes it*/
+    float: left;
+
+}
+
+header #branding h1{
+    margin: 0px;
+
+}
+
+header nav{
+    float: right;
+    margin-top: 10px; /*We want to move nav a bit down */
+}
+
+
+
+  /* we want Acme to be orange in our header*/
+header .highlight, header .current a{
+    color: #e8491d;
+    font-weight: bold;
+
+}
+/*<span> is an inline label element ie it's not gonna make it go on next line unlike <div>*/
+/* current class is used here to highlight the current li which is Home*/
+/*Now we want our menu to have a hover state*/
+
+header a:hover{
+    color:#cccccc;
+    font-weight: bold;
+}
+
+/*Showcase*/
+
+#showcase{
+    min-height: 400px;
+    background: url('../images/showcase.jpg') no-repeat 0 -400px;
+    /* 0 is x-coordinate of image and -400 is y-coordinate. 
+    We use ../images to go to images folder from css folder*/
+    text-align: center;
+    color: #ffffff;
+}
+
+#showcase h1{
+    margin-top: 100px;
+    font-size: 55px;
+    margin-bottom: 10px;
+    
+}
+
+#showcase p{
+
+    font-size: 20px;
+}
+
+/*Newsletter*/
+
+#newsletter{
+    padding: 15px;
+    color: #ffffff;
+    background: #35424a;
+
+}
+
+#newsletter h1{
+    float: left;
+}
+#newsletter form{
+    float: right;
+    margin-top: 15px;
+
+}
+
+#newsletter input[type="email"]{ /*input[] is to specify input type in css3*/
+    padding: 4px;
+    height: 25px;
+    width: 250px;
+}
+
+/*Boxes*/
+#boxes{
+    margin-top: 20px;
+
+}
+
+#boxes .box{
+    float: left;
+    text-align: center;
+    width: 30%;
+    padding: 10px;
+
+}
+
+#boxes .box img{
+    width: 90px;
+}
+
+/*Sidebar*/
+
+aside#sidebar{
+    float: right;
+    width: 30%;
+    margin-top: 10px;
+} /*aside with an id of sidebar*/
+
+aside#sidebar .quote input, aside#sidebar .quote textarea{
+    width:90%;
+    padding: 5px;
+}
+
+/*main-col*/
+article#main-col{
+    float: left;
+    width: 65%;
+    margin-top: 10px;
+}
+
+/*Services*/
+ul#services li{
+    list-style:none; /*removes bullets from list*/
+    padding: 20px;
+    border: #cccccc solid 1px;
+    margin-bottom: 5px;
+    background: #e6e6e6;
+}
+
+footer{
+    padding: 20px;
+    margin-top:20px;
+    color: #ffffff;
+    background-color:#e8491d;
+    text-align: center;
+}
+
+/* Our Home page is finished designing*/
+
+/*Media Queries for different medias such as phone*/
+@media(max-width: 768px){
+    header #branding,
+    header nav,
+    header nav li,
+    #newsletter h1,
+    #newsletter form,
+    #boxes .box,
+    article#main-col,
+    aside#sidebar{
+        float:none;
+        text-align:center;
+        width:100%;
+    }
+
+    header{
+        padding-bottom:20px;
+    }
+
+    #showcase h1{
+        margin-top:40px;
+    }
+
+    #newsletter button, .quote button{
+        display:block;
+        width:100%;
+    }
+
+    #newsletter form input[type="email"], .quote input, .quote textarea{
+        width: 100%;
+        margin-bottom:5px;
+    }
+}
